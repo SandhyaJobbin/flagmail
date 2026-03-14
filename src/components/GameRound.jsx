@@ -6,6 +6,7 @@ import EmailCard from './EmailCard.jsx';
 import ClueSystem from './ClueSystem.jsx';
 import Classifier from './Classifier.jsx';
 import gsap from 'gsap';
+import { ROUND_DURATION_SECONDS } from '../config/game.js';
 
 const glassCard = {
   background: 'rgba(255,255,255,0.62)',
@@ -67,7 +68,7 @@ export default function GameRound({
     onSubmit(0, true);
   }
 
-  const { timeLeft, phase, progress, start, stop } = useTimer(45, handleTimeout);
+  const { timeLeft, phase, progress, start, stop } = useTimer(ROUND_DURATION_SECONDS, handleTimeout);
 
   useEffect(() => {
     start();

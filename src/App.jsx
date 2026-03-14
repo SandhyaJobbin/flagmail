@@ -35,8 +35,8 @@ export default function App() {
       cluesRevealed: round.cluesRevealed,
       timedOut,
     });
-    gs.submitRound(record);
     bg.checkAfterRound({ record, timeLeft });
+    gs.submitRound(record);
   }, [gs, sc, bg]);
 
   // ── Move to next email ───────────────────────────────────────────────────

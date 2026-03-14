@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { ROUND_DURATION_SECONDS } from '../config/game.js';
 
-export function useTimer(duration = 45, onTimeout) {
+export function useTimer(duration = ROUND_DURATION_SECONDS, onTimeout) {
   const [timeLeft, setTimeLeft] = useState(duration);
   const [running, setRunning] = useState(false);
   const intervalRef = useRef(null);
